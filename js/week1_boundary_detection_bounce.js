@@ -1,7 +1,7 @@
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-var timer;
 var interval = 1000/60;
+var timer;
 
 // Create the ball
 var ball = new Ball();
@@ -10,20 +10,20 @@ var ball = new Ball();
 ball.x = canvas.width/2;
 ball.y = canvas.height/2;
 
+// Move ONLY to the right
+ball.vx = 2;
+ball.vy = 0;
+
 timer = setInterval(animate, interval);
 
-function animate() {
+function animate()
+{
+    // Clear the Canvas
     context.clearRect(0, 0, canvas.width, canvas.height);
 
+    // Move the Ball
     ball.move();
 
-    // Bounce off edges
-    if(ball.x + ball.width/2 > canvas.width || ball.x - ball.width/2 < 0){
-        ball.vx *= -1;
-    }
-    if(ball.y + ball.height/2 > canvas.height || ball.y - ball.height/2 < 0){
-        ball.vy *= -1;
-    }
-
+    // Update the Canvas (draw)
     ball.draw();
 }
