@@ -6,11 +6,11 @@ var timer;
 // Create the ball
 var ball = new Ball();
 
-// Start in the center
+// Center Starting point
 ball.x = canvas.width/2;
 ball.y = canvas.height/2;
 
-// Move ONLY to the right
+// Move right
 ball.vx = 2;
 ball.vy = 0;
 
