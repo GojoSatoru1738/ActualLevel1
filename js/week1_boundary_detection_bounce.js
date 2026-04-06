@@ -18,12 +18,22 @@ timer = setInterval(animate, interval);
 
 function animate()
 {
-    // Clear the Canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);
+   
+ball.move();
 
-    // Move the Ball
-    ball.move();
+// Right Side
+if (ball.x > canvas.width) {
+    ball.x = canvas.width;         
+    ball.x -= ball.width/2;         
+    ball.vx = -ball.vx;             
+}
 
-    // Update the Canvas (draw)
-    ball.draw();
+// Left Side
+if (ball.x < 0) {
+    ball.x = 0;                     
+    ball.x += ball.width/2;         
+    ball.vx = -ball.vx;             
+}
+
+ball.draw();
 }
