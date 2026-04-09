@@ -16,7 +16,7 @@ function Ball() {
         context.fill();
         context.restore();
     };
-
+    //YUH
     this.move = function() {
         this.x += this.vx;
         this.y += this.vy;

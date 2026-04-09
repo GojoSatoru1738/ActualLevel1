@@ -29,7 +29,7 @@ function Player()
 		context.restore();
 		
 	}	
-	
+	//YUH
 	//This changes the player's position
 	this.move = function()
 	{
