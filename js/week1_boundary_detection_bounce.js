@@ -19,21 +19,22 @@ timer = setInterval(animate, interval);
 function animate()
 {
    
+// Moving ball
 ball.move();
 
-// Right Side
-if (ball.x > canvas.width) {
-    ball.x = canvas.width;         
-    ball.x -= ball.width/2;         
-    ball.vx = -ball.vx;             
+
+if (ball.y < 0) {
+    ball.y = 0;                  
+    ball.y += ball.height/2;     
+    ball.vy = -ball.vy;          
 }
 
-// Left Side
-if (ball.x < 0) {
-    ball.x = 0;                     
-    ball.x += ball.width/2;         
-    ball.vx = -ball.vx;             
+if (ball.y > canvas.height) {
+    ball.y = canvas.height;      
+    ball.y -= ball.height/2;     
+    ball.vy = -ball.vy;          
 }
+
 
 ball.draw();
 }
