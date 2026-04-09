@@ -1,4 +1,4 @@
-// JavaScript Document
+
 
 var canvas;
 var context;
@@ -13,7 +13,7 @@ var ball;
 	//------Declare the Player's speed on the x and y axis------
 	ball.vx = 2;
 	ball.vy = 0;
-	//----------------------------------------------------
+	
 	
 	timer = setInterval(animate, interval);
 
@@ -23,12 +23,12 @@ function animate()
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	ball.move();
 	
-	//--------------Loop the Screen----------------------
+	
 	if(ball.x > canvas.width + ball.width/2)
 	{
 		ball.x = -ball.width/2	
 	}
-	//---------------------------------------------------
+	
 	
 	ball.draw();
 }

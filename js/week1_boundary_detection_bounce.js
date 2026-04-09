@@ -1,40 +1,49 @@
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-var interval = 1000/60;
 var timer;
+var interval = 1000/60;
 
-// Create the ball
 var ball = new Ball();
 
-// Center Starting point
+// start in center
 ball.x = canvas.width/2;
 ball.y = canvas.height/2;
-
-// Move right
-ball.vx = 2;
-ball.vy = 0;
 
 timer = setInterval(animate, interval);
 
 function animate()
 {
-   
-// Moving ball
-ball.move();
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
+    ball.move();
 
-if (ball.y < 0) {
-    ball.y = 0;                  
-    ball.y += ball.height/2;     
-    ball.vy = -ball.vy;          
-}
+    
+    if (ball.x > canvas.width) {
+        ball.x = canvas.width;
+        ball.x -= ball.width/2;
+        ball.vx = -ball.vx;
+    }
 
-if (ball.y > canvas.height) {
-    ball.y = canvas.height;      
-    ball.y -= ball.height/2;     
-    ball.vy = -ball.vy;          
-}
+    
+    if (ball.x < 0) {
+        ball.x = 0;
+        ball.x += ball.width/2;
+        ball.vx = -ball.vx;
+    }
 
+    
+    if (ball.y < 0) {
+        ball.y = 0;
+        ball.y += ball.height/2;
+        ball.vy = -ball.vy;
+    }
 
-ball.draw();
+    
+    if (ball.y > canvas.height) {
+        ball.y = canvas.height;
+        ball.y -= ball.height/2;
+        ball.vy = -ball.vy;
+    }
+
+    ball.draw();
 }

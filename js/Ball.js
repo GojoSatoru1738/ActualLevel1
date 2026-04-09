@@ -4,8 +4,8 @@ function Ball() {
     this.width = 50;
     this.height = 50;
     this.color = "#00ff00";
-    this.vx = 2;
-    this.vy = 2;
+    this.vx = 7;
+    this.vy = 7;
 
     this.draw = function() {
         context.save();
